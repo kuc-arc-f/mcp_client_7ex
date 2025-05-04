@@ -14,6 +14,9 @@ mcp client example , electron react
 LLM: gemini , Vercel AI SDK
 
 ***
-### blog 
+### deepwiki
+
+https://deepwiki.com/kuc-arc-f/mcp_client_7ex/
+
 
 ***
