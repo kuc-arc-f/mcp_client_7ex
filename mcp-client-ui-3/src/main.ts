@@ -10,6 +10,12 @@ import { getTodoList } from "./tools/getTodoList";
 import { saveWorkHour } from "./tools/saveWorkHour";
 import { getWorkList } from "./tools/getWorkList";
 import { addTask } from "./tools/addTask";
+import { addItemPrice } from "./tools/addItemPrice";
+import { sendMail } from "./tools/sendMail";
+import { addItemMail } from "./tools/addItemMail";
+import { fileWriteCsv } from "./tools/fileWriteCsv";
+import { addItemCsv } from "./tools/addItemCsv";
+
 import { generateText, tool } from "ai";
 import { z } from "zod";
 import { google } from "@ai-sdk/google";
@@ -44,8 +50,9 @@ const createWindow = () => {
       const result = await generateText({
         model: google(MODEL_NAME),
         tools: {
-          getNumber , addTodo, saveWorkHour , getWorkList , addTask , getTodoList
-
+          getNumber , addTodo, saveWorkHour , getWorkList , addTask , getTodoList ,
+          addItemPrice , sendMail , addItemMail , fileWriteCsv ,
+          addItemCsv , 
         },
         maxSteps: 5,
         messages: [{ role: "user", content: input }],
