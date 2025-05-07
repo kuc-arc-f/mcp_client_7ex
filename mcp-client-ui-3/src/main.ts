@@ -17,6 +17,7 @@ import { fileWriteCsv } from "./tools/fileWriteCsv";
 import { addItemCsv } from "./tools/addItemCsv";
 import { getWeatherInfo } from "./tools/getWeatherInfo";
 import { getSpreadSheet } from "./tools/getSpreadSheet";
+import { getSheetSearchUp } from "./tools/getSheetSearchUp";
 
 import { generateText, tool } from "ai";
 import { z } from "zod";
@@ -54,7 +55,7 @@ const createWindow = () => {
         tools: {
           getNumber , addTodo, saveWorkHour , getWorkList , addTask , getTodoList ,
           addItemPrice , sendMail , addItemMail , fileWriteCsv ,
-          addItemCsv , getWeatherInfo , getSpreadSheet , 
+          addItemCsv , getWeatherInfo , getSpreadSheet , getSheetSearchUp , 
         },
         maxSteps: 5,
         messages: [{ role: "user", content: input }],
