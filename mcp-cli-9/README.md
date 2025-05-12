@@ -30,6 +30,11 @@ npm run dev
 ```
 メール 検索して欲しい
 ```
+***
+* .env
+```
+GOOGLE_GENERATIVE_AI_API_KEY="api-key"
+```
 
 ***
 
