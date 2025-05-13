@@ -32,5 +32,7 @@ yarn start
 ***
 ### blog 
 
+https://zenn.dev/link/comments/77d63a6f502de1
+
 ***
 
