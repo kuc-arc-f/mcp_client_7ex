@@ -1,0 +1,40 @@
+﻿# mcp-cli-10
+
+ Version: 0.9.1
+
+ Author  : 
+
+ date    : 2025/05/13
+ 
+ update  :
+
+***
+
+RAG example , gemini
+
+***
+* .env
+```
+GOOGLE_GENERATIVE_AI_API_KEY="api-key"
+```
+***
+* embed
+```
+npx tsx src/embed.ts
+```
+
+***
+* start
+```
+npm run dev
+```
+
+***
+* prompt
+
+```
+メール 検索して欲しい
+```
+
+***
+
