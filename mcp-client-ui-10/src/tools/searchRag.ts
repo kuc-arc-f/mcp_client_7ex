@@ -1,0 +1,93 @@
+import ollama from 'ollama'
+import { generateText, tool } from "ai";
+import { z } from "zod";
+import { google } from "@ai-sdk/google";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
+import { embed } from 'ai';
+import { createInterface } from "node:readline/promises";
+import Database from 'better-sqlite3';
+import 'dotenv/config';
+process.env.GOOGLE_API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+//console.log("GOOGLE_GENERATIVE_AI_API_KEY=", process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+//console.log("GOOGLE_API_KEY=", process.env.GOOGLE_API_KEY);
+
+
+const DB_PATH = import.meta.env.VITE_VECTOR_DB_PATH;
+const db = new Database(DB_PATH);
+const MODEL_NAME = "gemini-2.0-flash";
+
+async function EmbedUserQuery(query) {
+    const googleModel = createGoogleGenerativeAI({
+        apiKey: process.env.GOOGLE_API_KEY || "",
+    });
+    const { embedding } = await embed({
+      model: googleModel.textEmbeddingModel("text-embedding-004"),
+      value: query,
+    });
+    const f = new Float32Array(embedding.flat())
+    return  f
+}
+
+
+
+function cosineSimilarity(v1, v2) {
+    //console.log("using js native")
+    v1 = new Float32Array(v1.buffer)
+    v2 = new Float32Array(v2.buffer)
+    if (v1.length !== v2.length) {
+        throw new Error("Vectors must be of the same length.");
+    }
+    let dot = 0, norm1Sq = 0, norm2Sq = 0;
+    for (let i = 0; i < v1.length; i++) {
+        const a = v1[i];
+        const b = v2[i];
+        dot += a * b;
+        norm1Sq += a * a;
+        norm2Sq += b * b;
+    }
+    return dot / (Math.sqrt(norm1Sq) * Math.sqrt(norm2Sq));
+}
+
+async function CheckSimalirity(query, sess) {
+    const rows = db.prepare(`
+          SELECT * FROM embeddings WHERE sessid = ?
+        `).all(sess)
+
+    let matches = ``
+    if (rows.length > 0) {
+        const embedding = await EmbedUserQuery(query)
+        for (const row of rows) {
+            const e = new Float32Array(row.embeddings.buffer)
+            const sim = cosineSimilarity(embedding, e)
+            //console.log(`doc: ${row.name}, similarity: ${sim}, user query: ${query}`)
+            if (sim > 0.6) {
+                matches += row.content + "\n"
+            }
+        }
+    }
+
+    return matches !== `` ? `
+     context: ${matches}\n
+     user query: ${query}
+    ` : query
+
+}
+
+export async function searchRag(userQuery, sess) {
+  const query = await CheckSimalirity(userQuery, sess);
+    const newQuery = `
+***
+日本語で、回答して欲しい。
+${query}
+`;
+  console.log("formatted query: ", newQuery)
+
+  const result = await generateText({
+    model: google(MODEL_NAME),
+    maxSteps: 5,
+    messages: [{ role: "user", content: newQuery }],
+  });
+  console.log("artifact:");
+  console.log(result.text);
+  return result.text;
+}
