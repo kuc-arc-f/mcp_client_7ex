@@ -1,4 +1,4 @@
-import ollama from 'ollama'
+//import ollama from 'ollama'
 import { generateText, tool } from "ai";
 import { z } from "zod";
 import { google } from "@ai-sdk/google";

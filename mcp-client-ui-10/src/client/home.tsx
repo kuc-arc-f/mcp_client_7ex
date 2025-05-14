@@ -38,13 +38,6 @@ function Home() {
   useEffect(() => {
     (async () => {
       try{
-        /*
-        const model = chatUtil.getModelName(LibConfig.STORAGE_KEY_LLM_MODEL);
-        console.log("model=", model);
-        selectModel = model;
-        const res = await ollama.list();
-        setModels(res.models);
-        */
       }catch(e){
         console.erros(e);
       }
