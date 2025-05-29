@@ -31,5 +31,7 @@ yarn dev
 ***
 ### blog 
 
+https://zenn.dev/knaka0209/scraps/891032203ca726
+
 ***
 
