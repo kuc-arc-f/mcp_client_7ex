@@ -43,6 +43,12 @@ const CMD_PATH = "/path/target/release/rust_mcp_server_4.exe"
 ```
 コーヒー , 230 円 をAPIに 送信して欲しい。
 ```
+
+***
+* image
+
+![img1](/image/ss1013a.png)
+
 ***
 ### blog 
 
