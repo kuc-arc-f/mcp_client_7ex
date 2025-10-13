@@ -18,7 +18,7 @@ GoLang MCP Server + electron
 * .env
 
 ```
-GOOGLE_GENERATIVE_AI_API_KEY="api-key"
+VITE_GOOGLE_GENERATIVE_AI_API_KEY="api-key"
 ```
 ***
 * start
