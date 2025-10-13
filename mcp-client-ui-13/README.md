@@ -29,7 +29,7 @@ npm run start
 ***
 
 * src/tools/addItemPrice.ts
-* CMD_PATH: Rust MCP Server path
+* CMD_PATH: Go MCP Server path
 
 ```
 const CMD_PATH = "/path/go-mcp-server-4.exe"
@@ -41,6 +41,12 @@ const CMD_PATH = "/path/go-mcp-server-4.exe"
 ```
 コーヒー , 230 円 をAPIに 送信して欲しい。
 ```
+***
+* image
+
+![img1](/image/ss1013b.png)
+
+
 ***
 ### blog 
 
