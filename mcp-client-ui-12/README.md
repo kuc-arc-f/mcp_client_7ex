@@ -52,5 +52,7 @@ const CMD_PATH = "/path/target/release/rust_mcp_server_4.exe"
 ***
 ### blog 
 
+https://zenn.dev/knaka0209/scraps/f1bae59ecefaac
+
 ***
 
