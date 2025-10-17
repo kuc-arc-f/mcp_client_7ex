@@ -36,6 +36,13 @@ npm run start
 ```
 コーヒー , 230 円 をAPIに 送信して欲しい。
 ```
+
+***
+* image
+
+![img1](/image/mcp-client-ui-14.png)
+
+
 ***
 ### blog 
 
