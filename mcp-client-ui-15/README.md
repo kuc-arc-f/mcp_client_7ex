@@ -37,6 +37,11 @@ npm run start
 コーヒー , 230 円 をAPIに 送信して欲しい。
 ```
 ***
+### mcp-server
+
+https://github.com/kuc-arc-f/workers26/tree/main/mcp_2
+
+***
 ### blog 
 
 ***
