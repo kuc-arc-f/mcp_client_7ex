@@ -6,6 +6,7 @@ const fsPromises = require('fs').promises;
 
 import { getNumber } from "./tools/getNumber";
 import { addItemPrice } from "./tools/addItemPrice";
+import { getItemPrice } from "./tools/getItemPrice";
 
 import { generateText, tool } from "ai";
 import { z } from "zod";
@@ -42,7 +43,8 @@ const createWindow = () => {
       const result = await generateText({
         model: google(MODEL_NAME),
         tools: {
-          getNumber , addItemPrice
+          getNumber , addItemPrice,
+          getItemPrice
         },
         maxSteps: 5,
         messages: [{ role: "user", content: input }],
