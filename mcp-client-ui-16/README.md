@@ -20,6 +20,16 @@ Rust MCP Server + electron , excel download
 https://github.com/kuc-arc-f/rust_3pri/tree/main/mcp_7
 
 ***
+* images
+
+![img1](/image/mcp-client-ui-16-1.png)
+
+***
+* excel download
+
+![img1](/image/mcp-client-ui-16-2.png)
+
+***
 ### setup
 
 * .env
