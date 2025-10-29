@@ -17,7 +17,7 @@ Rust MCP Server + electron , excel download
 ***
 ### MCP Server
 
-https://github.com/kuc-arc-f/rust_3pri/tree/main/mcp_7
+https://github.com/kuc-arc-f/rust_3ex/tree/main/mcp_7
 
 ***
 * images
