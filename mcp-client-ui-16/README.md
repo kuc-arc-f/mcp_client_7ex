@@ -53,5 +53,7 @@ npm run start
 ***
 ### blog 
 
+https://zenn.dev/knaka0209/scraps/99db78cb5d3985
+
 ***
 
