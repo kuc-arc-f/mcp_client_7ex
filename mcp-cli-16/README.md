@@ -12,6 +12,7 @@ node + RAG + postgres
 
 * model: Gemini
 * embedding: gemini-embedding-001
+* node 22
 
 ***
 ### Setup
