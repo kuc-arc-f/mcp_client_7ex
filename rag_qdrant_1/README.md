@@ -1,0 +1,45 @@
+﻿# rag_qdrant_1
+
+ Version: 0.9.1
+
+ date    : 2025/12/30
+ 
+ update  :
+
+***
+
+Electron , RAG search Qdrant 
+
+* embedding: gemini-embedding-001
+* gemma3-27b
+
+***
+* vector dara add
+
+https://github.com/kuc-arc-f/mcp_server_2ex/tree/main/qdrant_2
+
+***
+* .env
+
+```
+VITE_GOOGLE_GENAI_USE_VERTEXAI=FALSE
+VITE_GOOGLE_API_KEY=your-key
+```
+***
+
+* start
+```
+npm run start
+```
+
+***
+* build
+
+```
+npm run package
+```
+
+***
+### blog
+
+***
