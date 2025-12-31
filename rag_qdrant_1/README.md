@@ -42,4 +42,6 @@ npm run package
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/be781e9a8f21d5
+
 ***
