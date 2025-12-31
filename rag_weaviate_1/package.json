@@ -1,6 +1,6 @@
 {
-  "name": "rag_qdrant_1",
-  "productName": "rag_qdrant_1",
+  "name": "rag_weaviate_1",
+  "productName": "rag_weaviate_1",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
