@@ -13,6 +13,11 @@ RAG search Qdrant , Agent Skills
 * embedding: gemini-embedding-001
 
 ***
+* vector data add
+
+https://github.com/kuc-arc-f/mcp_server_2ex/tree/main/qdrant_2
+
+***
 * scripts/src/config.ts
 
 ```
