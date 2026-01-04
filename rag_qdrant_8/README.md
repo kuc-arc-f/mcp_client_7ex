@@ -28,4 +28,6 @@ npm run build
 ***
 ### blog
 
+https://zenn.dev/knaka0209/scraps/a8226bb4f1fb48
+
 ***
